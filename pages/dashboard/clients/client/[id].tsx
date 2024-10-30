@@ -2,10 +2,10 @@ import { useParams } from 'next/navigation';
 import React from 'react';
 
 const Page = () => {
-    const { id } = useParams();
+    // const { id } = useParams();
     return (
         <div>
-            <h1>{id}</h1>
+            <h1>Client</h1>
         </div>
     );
 };

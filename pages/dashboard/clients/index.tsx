@@ -1,8 +1,8 @@
 import React from 'react';
-import LoaderComponent from '@/pages/dashboard/components/LoaderComponent';
+// import LoaderComponent from '@/pages/dashboard/components/LoaderComponent';
 import PageHeader from '@/shared/layout-components/page-header/page-header';
 import Seo from '@/shared/layout-components/seo/seo';
-import DropOffDataTable from './DropOffDataTable';
+// import DropOffDataTable from './DropOffDataTable';
 // import { fetchDropOffs } from '@/utils/data_fetch';
 import useSWR from 'swr';
 

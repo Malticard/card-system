@@ -2,7 +2,7 @@ import React from 'react';
 import PageHeader from '@/shared/layout-components/page-header/page-header';
 import { Col, Row } from 'react-bootstrap';
 import Seo from '@/shared/layout-components/seo/seo';
-import StaffDataTable from './StaffDatatable';
+// import StaffDataTable from './StaffDatatable';
 
 import LoaderComponent from '@/pages/dashboard/components/LoaderComponent';
 import useSWR from 'swr';

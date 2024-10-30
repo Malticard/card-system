@@ -1,76 +1,76 @@
 import React from 'react'
 
 
-import PageHeader from '../../../shared/layout-components/page-header/page-header'
+import PageHeader from '@/shared/layout-components/page-header/page-header'
 import { ProgressBar, Badge, Breadcrumb, Button, Row, Col, Card, Table, ListGroup } from "react-bootstrap";
 import Link from "next/link"
-import Seo from '../../../shared/layout-components/seo/seo';
+import Seo from '@/shared/layout-components/seo/seo';
 const Visitors = [
   {
-	  VisitorsId: "../../../assets/images/faces/2.jpg",
-	  VisitorsName: "Socrates Itumay",
-	  Visitorsrole: "Web Developer",
-	  Visitorsfollow: "Follow",
-	  Visitorsfollowtext: "secondary",
-	  VisitorBtn: "btn",
-	},
-	{
-	  VisitorsId: "../../../assets/images/faces/3.jpg",
-	  VisitorsName: "Socrates Itumay",
-	  Visitorsrole: "Web Developer",
-	  Visitorsfollow: "Follow",
-	  Visitorsfollowtext: "secondary",
-	  VisitorBtn: "btn",
-	},
-	{
-	  VisitorsId: "../../../assets/images/faces/4.jpg",
-	  VisitorsName: "Socrates Itumay",
-	  Visitorsrole: "Web Developer",
-	  Visitorsfollow: "Follow",
-	  Visitorsfollowtext: "info",
-	  VisitorBtn: "btn",
-	},
-	{
-	  VisitorsId: "../../../assets/images/faces/5.jpg",
-	  VisitorsName: "Mariane Galeon",
-	  Visitorsrole: "Administrator",
-	  Visitorsfollow: "Follow",
-	  Visitorsfollowtext: "primary",
-	  VisitorBtn: "btn",
-	},
-	{
-	  VisitorsId: "../../../assets/images/faces/6.jpg",
-	  VisitorsName: "Steven Watson",
-	  Visitorsrole: "Founder",
-	  Visitorsfollow: "Follow",
-	  Visitorsfollowtext: "success",
-	  VisitorBtn: "btn",
-	},
-	{
-	  VisitorsId: "../../../assets/images/faces/7.jpg",
-	  VisitorsName: "Sonia Fraser",
-	  Visitorsrole: "App Developer",
-	  Visitorsfollow: "Follow",
-	  Visitorsfollowtext: "warning",
-	  VisitorBtn: "btn",
-	},
-	{
-	  VisitorsId: "../../../assets/images/faces/3.jpg",
-	  VisitorsName: "Socrates Itumay",
-	  Visitorsrole: "Web Developer",
-	  Visitorsfollow: "Follow",
-	  Visitorsfollowtext: "primary",
-	  VisitorBtn: "btn",
-	},
-  ];
+    VisitorsId: "@/assets/images/faces/2.jpg",
+    VisitorsName: "Socrates Itumay",
+    Visitorsrole: "Web Developer",
+    Visitorsfollow: "Follow",
+    Visitorsfollowtext: "secondary",
+    VisitorBtn: "btn",
+  },
+  {
+    VisitorsId: "../../../assets/images/faces/3.jpg",
+    VisitorsName: "Socrates Itumay",
+    Visitorsrole: "Web Developer",
+    Visitorsfollow: "Follow",
+    Visitorsfollowtext: "secondary",
+    VisitorBtn: "btn",
+  },
+  {
+    VisitorsId: "../../../assets/images/faces/4.jpg",
+    VisitorsName: "Socrates Itumay",
+    Visitorsrole: "Web Developer",
+    Visitorsfollow: "Follow",
+    Visitorsfollowtext: "info",
+    VisitorBtn: "btn",
+  },
+  {
+    VisitorsId: "../../../assets/images/faces/5.jpg",
+    VisitorsName: "Mariane Galeon",
+    Visitorsrole: "Administrator",
+    Visitorsfollow: "Follow",
+    Visitorsfollowtext: "primary",
+    VisitorBtn: "btn",
+  },
+  {
+    VisitorsId: "../../../assets/images/faces/6.jpg",
+    VisitorsName: "Steven Watson",
+    Visitorsrole: "Founder",
+    Visitorsfollow: "Follow",
+    Visitorsfollowtext: "success",
+    VisitorBtn: "btn",
+  },
+  {
+    VisitorsId: "../../../assets/images/faces/7.jpg",
+    VisitorsName: "Sonia Fraser",
+    Visitorsrole: "App Developer",
+    Visitorsfollow: "Follow",
+    Visitorsfollowtext: "warning",
+    VisitorBtn: "btn",
+  },
+  {
+    VisitorsId: "../../../assets/images/faces/3.jpg",
+    VisitorsName: "Socrates Itumay",
+    Visitorsrole: "Web Developer",
+    Visitorsfollow: "Follow",
+    Visitorsfollowtext: "primary",
+    VisitorBtn: "btn",
+  },
+];
 const Widgets = () => {
   return (
     <>
-        <Seo title="Widgets"/>
+      <Seo title="Widgets" />
 
-    <PageHeader title="Widgets" item="Apps" active_item="Widgets"/>
+      <PageHeader title="Widgets" item="Apps" active_item="Widgets" />
 
-    
+
       {/* <!-- Row --> */}
       <Row className="row-sm">
         <Col sm={6} md={6} xl={3}>
@@ -340,7 +340,7 @@ const Widgets = () => {
             <Card.Body className="user-card text-center">
               <div className="main-img-user avatar avatar-lg text-center">
                 <img alt="avatar" className="rounded-circle" src={"../../../assets/images/faces/4.jpg"} />
-			
+
               </div>
               <div className="mt-2">
                 <h5 className="mb-1">Joyce Chua</h5>
@@ -359,11 +359,11 @@ const Widgets = () => {
         <Col md={6} sm={6} xl={3}>
           <Card className="custom-card">
             <Card.Body className="user-card text-center">
-            <div className="main-img-user avatar avatar-lg text-center">
+              <div className="main-img-user avatar avatar-lg text-center">
                 <img alt="avatar" className="rounded-circle" src={"../../../assets/images/faces/6.jpg"} />
-			
+
               </div>
-             
+
               <div className="mt-2">
                 <h5 className="mb-1">Owen Bongcaras</h5>
                 <p className="mb-1">Web Designer</p>
@@ -381,11 +381,11 @@ const Widgets = () => {
         <Col md={6} sm={6} xl={3}>
           <Card className="custom-card">
             <Card.Body className="user-card text-center">
-            <div className="main-img-user avatar avatar-lg text-center">
+              <div className="main-img-user avatar avatar-lg text-center">
                 <img alt="avatar" className="rounded-circle" src={"../../../assets/images/faces/7.jpg"} />
-			
+
               </div>
-          
+
               <div className="mt-2">
                 <h5 className="mb-1">Mariane Galeon</h5>
                 <p className="mb-1">Php Developer</p>
@@ -619,9 +619,9 @@ const Widgets = () => {
               <Card className="card custom-card our-team">
                 <Card.Body>
                   <div className="picture avatar-lg online text-center">
-					<div className="rounded-circle">
-                    <img alt="avatar" src={"../../../assets/images/faces/5.jpg"} />
-					</div>
+                    <div className="rounded-circle">
+                      <img alt="avatar" src={"../../../assets/images/faces/5.jpg"} />
+                    </div>
                   </div>
                   <div className="text-center mt-3">
                     <h5 className="pro-user-username text-dark mt-2 mb-0">
@@ -669,9 +669,9 @@ const Widgets = () => {
               <Card className="custom-card our-team">
                 <Card.Body>
                   <div className="picture avatar-lg online text-center">
-					<div className="rounded-circle" >
-                    <img alt="avatar" src={"../../../assets/images/faces/6.jpg"} />
-					</div>
+                    <div className="rounded-circle" >
+                      <img alt="avatar" src={"../../../assets/images/faces/6.jpg"} />
+                    </div>
                   </div>
                   <div className="text-center mt-3">
                     <h5 className="pro-user-username text-dark mt-2 mb-0">
@@ -727,9 +727,9 @@ const Widgets = () => {
                       <p className="text-muted">
                         <span className="text-purple">
                           <i className="fa fa-arrow-up text-success me-1"> </i>
-                            23%
+                          23%
                         </span>
-                       <span className="d-inline-flex me-2"> in this year </span> 
+                        <span className="d-inline-flex me-2"> in this year </span>
                       </p>
                       <div className="progress progress-sm mb-0">
                         <ProgressBar
@@ -750,7 +750,7 @@ const Widgets = () => {
                           <i className="fa fa-arrow-down text-danger me-1"> </i>
                           12%
                         </span>
-                        <span className="d-inline-flex me-2"> in this year </span> 
+                        <span className="d-inline-flex me-2"> in this year </span>
                       </p>
                       <div className="progress progress-sm mb-0">
                         <ProgressBar
@@ -772,16 +772,16 @@ const Widgets = () => {
 
       {/* <!-- Row --> */}
       <Row className="row-sm">
-  
+
         <Col sm={12} md={12} xl={4}>
           <Card className=" custom-card">
             <Card.Body >
               <div className="card-block">
                 <div className="row align-items-center justify-content-center">
                   <div className="col-auto user-lock">
-					        <span className="img-fluid rounded-circle">
-                  <img className="img-fluid rounded-circle" src="../../../assets/images/faces/8.jpg" alt="avatar" />
-                  </span>
+                    <span className="img-fluid rounded-circle">
+                      <img className="img-fluid rounded-circle" src="../../../assets/images/faces/8.jpg" alt="avatar" />
+                    </span>
                   </div>
                   <div className="col">
                     <h5>Joyce Chua</h5>
@@ -789,32 +789,32 @@ const Widgets = () => {
                   </div>
                 </div>
                 <ul className="task-list">
-                                        <li>
-                                            <i className="task-icon bg-primary"></i>
-                                            <h6>Task Finished<span className="float-end text-muted fs-11">29 Oct 2020</span></h6>
-                                            <p className="text-muted fs-12">Adam Berry finished task on<a href="#" className="fw-medium"> Project Management</a></p>
-                                        </li>
-                                        <li>
-                                            <i className="task-icon bg-secondary"></i>
-                                            <h6>New Comment<span className="float-end text-muted fs-11">25 Oct 2020</span></h6>
-                                            <p className="text-muted fs-12">Victoria commented on Project <a href="#" className="fw-medium"> AngularJS Template</a></p>
-                                        </li>
-                                        <li>
-                                            <i className="task-icon bg-secondary"></i>
-                                            <h6>Project Completed<span className="float-end text-muted fs-11">22 Aug 2020</span></h6>
-                                            <p className="text-muted fs-12">Victoria commented on Project <a href="#" className="fw-medium"> AngularJS Template</a></p>
-                                        </li>
-                                        <li>
-                                            <i className="task-icon bg-secondary"></i>
-                                            <h6>New Request<span className="float-end text-muted fs-11">24 Oct 2022</span></h6>
-                                            <p className="text-muted fs-12">Victoria commented on Project <a href="#" className="fw-medium"> AngularJS Template</a></p>
-                                        </li>
-                                        <li>
-                                            <i className="task-icon bg-danger"></i>
-                                            <h6>Task Overdue<span className="float-end text-muted fs-11">14 Oct 2020</span></h6>
-                                            <p className="text-muted mb-0 fs-12">Petey Cruiser finished task <a href="#" className="fw-medium"> Integrated management</a></p>
-                                        </li>
-                                    </ul>
+                  <li>
+                    <i className="task-icon bg-primary"></i>
+                    <h6>Task Finished<span className="float-end text-muted fs-11">29 Oct 2020</span></h6>
+                    <p className="text-muted fs-12">Adam Berry finished task on<a href="#" className="fw-medium"> Project Management</a></p>
+                  </li>
+                  <li>
+                    <i className="task-icon bg-secondary"></i>
+                    <h6>New Comment<span className="float-end text-muted fs-11">25 Oct 2020</span></h6>
+                    <p className="text-muted fs-12">Victoria commented on Project <a href="#" className="fw-medium"> AngularJS Template</a></p>
+                  </li>
+                  <li>
+                    <i className="task-icon bg-secondary"></i>
+                    <h6>Project Completed<span className="float-end text-muted fs-11">22 Aug 2020</span></h6>
+                    <p className="text-muted fs-12">Victoria commented on Project <a href="#" className="fw-medium"> AngularJS Template</a></p>
+                  </li>
+                  <li>
+                    <i className="task-icon bg-secondary"></i>
+                    <h6>New Request<span className="float-end text-muted fs-11">24 Oct 2022</span></h6>
+                    <p className="text-muted fs-12">Victoria commented on Project <a href="#" className="fw-medium"> AngularJS Template</a></p>
+                  </li>
+                  <li>
+                    <i className="task-icon bg-danger"></i>
+                    <h6>Task Overdue<span className="float-end text-muted fs-11">14 Oct 2020</span></h6>
+                    <p className="text-muted mb-0 fs-12">Petey Cruiser finished task <a href="#" className="fw-medium"> Integrated management</a></p>
+                  </li>
+                </ul>
               </div>
             </Card.Body>
           </Card>
@@ -832,40 +832,40 @@ const Widgets = () => {
               </div>
             </Card.Header>
             <Card.Body className="pt-2 mt-0">
-            <div className="list-group border projects-list">
-                                    <a href="#" className="list-group-item list-group-item-action flex-column border-end-0 border-start-0 align-items-start border-top-0">
-                                        <div className="d-flex w-100 justify-content-between">
-                                            <h6 className="mb-1 fw-medium ">PSD Projects</h6>
-                                            <small className="text-danger"><i className="fa fa-caret-down me-1"></i>5 days ago</small>
-                                        </div>
-                                        <p className="mb-0 text-muted mb-0 fs-12">Started:17-02-2020</p>
-                                        <small className="text-muted">Lorem ipsum dolor sit amet, consectetuer adipiscing elit...</small>
-                                    </a>
-                                    <a href="#" className="list-group-item list-group-item-action flex-column border-end-0 border-start-0 align-items-start">
-                                        <div className="d-flex w-100 justify-content-between">
-                                            <h6 className="mb-1 fw-medium">Wordpress Projects</h6>
-                                            <small className="text-success"><i className="fa fa-caret-up me-1"></i>2 days ago</small>
-                                        </div>
-                                        <p className="mb-0 text-muted mb-0 fs-12">Started:15-02-2020</p>
-                                        <small className="text-muted">Lorem ipsum dolor sit amet, consectetuer adipiscing elit..</small>
-                                    </a>
-                                    <a href="#" className="list-group-item list-group-item-action border-end-0 border-start-0 flex-column align-items-start">
-                                        <div className="d-flex w-100 justify-content-between">
-                                            <h6 className="mb-1 fw-medium">HTML &amp; CSS3 Projects</h6>
-                                            <small className="text-danger"><i className="fa fa-caret-down me-1"></i>1 days ago</small>
-                                        </div>
-                                        <p className="mb-0 text-muted mb-0 fs-12">Started:26-02-2020</p>
-                                        <small className="text-muted">Lorem ipsum dolor sit amet, consectetuer adipiscing elit..</small>
-                                    </a>
-                                    <a href="#" className="list-group-item list-group-item-action flex-column border-end-0 border-bottom-0 border-start-0 align-items-start">
-                                        <div className="d-flex w-100 justify-content-between">
-                                            <h6 className="mb-1 fw-medium">Excel Projects</h6>
-                                            <small className="text-success"><i className="fa fa-caret-up me-1"></i>2 days ago</small>
-                                        </div>
-                                        <p className="mb-0 text-muted mb-0 fs-12">Started:15-02-2020</p>
-                                        <small className="text-muted">Lorem ipsum dolor sit amet, consectetuer adipiscing elit..</small>
-                                    </a>
-                                </div>
+              <div className="list-group border projects-list">
+                <a href="#" className="list-group-item list-group-item-action flex-column border-end-0 border-start-0 align-items-start border-top-0">
+                  <div className="d-flex w-100 justify-content-between">
+                    <h6 className="mb-1 fw-medium ">PSD Projects</h6>
+                    <small className="text-danger"><i className="fa fa-caret-down me-1"></i>5 days ago</small>
+                  </div>
+                  <p className="mb-0 text-muted mb-0 fs-12">Started:17-02-2020</p>
+                  <small className="text-muted">Lorem ipsum dolor sit amet, consectetuer adipiscing elit...</small>
+                </a>
+                <a href="#" className="list-group-item list-group-item-action flex-column border-end-0 border-start-0 align-items-start">
+                  <div className="d-flex w-100 justify-content-between">
+                    <h6 className="mb-1 fw-medium">Wordpress Projects</h6>
+                    <small className="text-success"><i className="fa fa-caret-up me-1"></i>2 days ago</small>
+                  </div>
+                  <p className="mb-0 text-muted mb-0 fs-12">Started:15-02-2020</p>
+                  <small className="text-muted">Lorem ipsum dolor sit amet, consectetuer adipiscing elit..</small>
+                </a>
+                <a href="#" className="list-group-item list-group-item-action border-end-0 border-start-0 flex-column align-items-start">
+                  <div className="d-flex w-100 justify-content-between">
+                    <h6 className="mb-1 fw-medium">HTML &amp; CSS3 Projects</h6>
+                    <small className="text-danger"><i className="fa fa-caret-down me-1"></i>1 days ago</small>
+                  </div>
+                  <p className="mb-0 text-muted mb-0 fs-12">Started:26-02-2020</p>
+                  <small className="text-muted">Lorem ipsum dolor sit amet, consectetuer adipiscing elit..</small>
+                </a>
+                <a href="#" className="list-group-item list-group-item-action flex-column border-end-0 border-bottom-0 border-start-0 align-items-start">
+                  <div className="d-flex w-100 justify-content-between">
+                    <h6 className="mb-1 fw-medium">Excel Projects</h6>
+                    <small className="text-success"><i className="fa fa-caret-up me-1"></i>2 days ago</small>
+                  </div>
+                  <p className="mb-0 text-muted mb-0 fs-12">Started:15-02-2020</p>
+                  <small className="text-muted">Lorem ipsum dolor sit amet, consectetuer adipiscing elit..</small>
+                </a>
+              </div>
             </Card.Body>
           </Card>
         </Col>
