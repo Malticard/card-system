@@ -1,13 +1,6 @@
-## Example app using MongoDB
+[![Netlify Status](https://api.netlify.com/api/v1/badges/d30a952e-70f6-4760-af16-92ad4b1eba8b/deploy-status)](https://app.netlify.com/sites/cardsystem/deploys)
 
-[MongoDB](https://www.mongodb.com/) is a general purpose, document-based, distributed database built for modern application developers and for the cloud era. This example will show you how to connect to and use MongoDB as your backend for your Next.js app.
-
-If you want to learn more about MongoDB, visit the following pages:
-
-- [MongoDB Atlas](https://mongodb.com/atlas)
-- [MongoDB Documentation](https://docs.mongodb.com/)
-
-## Deploy your own
+## Deploy
 
 Once you have access to the environment variables you'll need, deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
 
