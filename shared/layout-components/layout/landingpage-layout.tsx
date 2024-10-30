@@ -1,4 +1,4 @@
-import dynamic from 'next/dynamic';
+
 import store from "../../redux/store";
 import React, { ReactNode, useEffect } from 'react'
 import { Provider } from 'react-redux';
@@ -9,28 +9,28 @@ interface AuthenticationLayoutProps {
   children: ReactNode;
 }
 
-const Landingpagelayout = ({ children }:AuthenticationLayoutProps) => {
-  
-  const Add =()=>{
-    
-  document.querySelector("body")?.classList.add("landing-body")
-  document.querySelector("body")?.classList.remove("leftmenu")
-  document.querySelector("body")?.classList.remove("main-body")
+const Landingpagelayout = ({ children }: AuthenticationLayoutProps) => {
 
-  document.querySelector("body")?.classList.remove("error-1")
+  const Add = () => {
+
+    document.querySelector("body")?.classList.add("landing-body")
+    document.querySelector("body")?.classList.remove("leftmenu")
+    document.querySelector("body")?.classList.remove("main-body")
+
+    document.querySelector("body")?.classList.remove("error-1")
 
   }
   useEffect(() => {
     Add()
-  },[])
+  }, [])
   return (
-<div className="landing-page-wrapper">
+    <div className="landing-page-wrapper">
       <Provider store={store}>
-          <Landingpageswitcher  />
-      { children }
+        <Landingpageswitcher />
+        {children}
       </Provider>
 
-      </div>
+    </div>
   )
 }
 

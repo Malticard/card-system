@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import Seo from '../../../shared/layout-components/seo/seo'
+import Seo from '@/shared/layout-components/seo/seo'
 
 import Link from "next/link"
 import { Row, Col, Card, Container, Form } from "react-bootstrap";

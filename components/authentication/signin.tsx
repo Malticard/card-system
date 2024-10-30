@@ -1,6 +1,6 @@
 import React from 'react'
 import dynamic from 'next/dynamic';
-import Seo from '../../../shared/layout-components/seo/seo'
+import Seo from '@/shared/layout-components/seo/seo'
 import { Row, Col, Card, Container, Form } from "react-bootstrap";
 
 import Link from "next/link"
