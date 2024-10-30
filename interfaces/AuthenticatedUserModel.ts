@@ -1,33 +1,22 @@
-// To parse this data:
-//
-//   import { Convert, AuthenticatedUserModel } from "./file";
-//
-//   const authenticatedUserModel = Convert.toAuthenticatedUserModel(json);
 
-export interface AuthenticatedUserModel {
-    id: string;
-    staff_email: string;
-    fname: string;
-    lname: string;
-    contact: number;
-    profile_pic: string;
-    role: string;
-    school: string;
-    school_badge: string;
-    schoolName: string;
-    schoolEmail: string;
-    isNewUser: boolean;
-    _token: string;
-    isDeleted: boolean;
+export interface UserModel {
+    _id: string;
+    name: string;
+    email: string;
+    picture: string;
+    password: string;
+    type: number;
+    __v: number;
 }
+
 
 // Converts JSON strings to/from your types
 export class AuthenticatedUserModelConvert {
-    public static toAuthenticatedUserModel(json: string): AuthenticatedUserModel {
+    public static toAuthenticatedUserModel(json: string): UserModel {
         return JSON.parse(json);
     }
 
-    public static authenticatedUserModelToJson(value: AuthenticatedUserModel): string {
+    public static authenticatedUserModelToJson(value: UserModel): string {
         return JSON.stringify(value);
     }
 }

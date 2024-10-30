@@ -33,145 +33,24 @@ export const MENUITEMS: (MenuItem | NestedMenuItem)[] = [
         title: "Dashboard",
       },
       {
-        path: "/dashboard/Students",
+        path: "/dashboard/clients",
         icon: "ti-user",
         type: "link",
         active: false,
         selected: false,
-        title: "Students",
+        title: "Clients",
       }, {
-        path: "/dashboard/Staff",
-        icon: "ti-home",
-        type: "link",
-        active: false,
-        selected: false,
-        title: "Staff",
-      }, {
-        path: "/dashboard/Guardians",
+        path: "/dashboard/users",
         icon: "ti-user",
         type: "link",
         active: false,
         selected: false,
-        title: "Guardians",
-      }, {
-        path: "/dashboard/Classes",
-        icon: "ti-home",
-        type: "link",
-        active: false,
-        selected: false,
-        title: "Classes",
-      }, {
-        path: "/dashboard/Streams",
-        icon: "ti-home",
-        type: "link",
-        active: false,
-        selected: false,
-        title: "Streams",
+        title: "Users",
       },
 
     ],
   },
-  {
-    menutitle: "MONITORING SECTION",
-    Items: [
-      {
-        path: "/dashboard/PendingOvertime",
-        icon: "ti-timer",
-        type: "link",
-        active: false,
-        selected: false,
-        title: "Pending Overtime",
-      }, {
-        path: "/dashboard/ClearedOvertime",
-        icon: "ti-timer",
-        type: "link",
-        active: false,
-        selected: false,
-        title: "Cleared Overtime",
-      },
-      {
-        path: "/dashboard/staffClocking",
-        icon: "ti-timer",
-        type: "sub",
-        active: false,
-        selected: false,
-        title: "Staff Clocking",
-        children: [
-          {
-            path: "/dashboard/clocking/staffClockingIn",
-            type: "link",
-            active: false,
-            selected: false,
-            title: "Clocking In",
-          }, {
-            path: "/dashboard/clocking/staffClockingOut",
-            type: "link",
-            active: false,
-            selected: false,
-            title: "Clocking Out",
-          }
-        ],
-      }, {
-        title: "Student Clocking",
-        icon: "ti-timer",
-        type: "sub",
-        active: false,
-        selected: false,
-        children: [
-          {
-            path: "/dashboard/clocking/studentClockingIn",
-            // icon: "ti-timer",
-            type: "link",
-            active: false,
-            selected: false,
-            title: "Clocking In",
-          }, {
-            path: "/dashboard/clocking/studentClockingOut",
-            // icon: "ti-timer",
-            type: "link",
-            active: false,
-            selected: false,
-            title: "Clocking Out",
-          }
-        ]
-      }, {
-        path: "/dashboard/PickUps",
-        icon: "ti-arrow-up",
-        type: "link",
-        active: false,
-        selected: false,
-        title: "Pick Ups",
-      }, {
-        path: "/dashboard/DropOffs",
-        icon: "ti-arrow-down",
-        type: "link",
-        active: false,
-        selected: false,
-        title: "Drop Offs",
-      },
 
-    ],
-  },
-  {
-    menutitle: "SETTINGS SECTION",
-    Items: [
-      {
-        path: "/dashboard/ChangePassword",
-        icon: " ti-lock",
-        type: "link",
-        active: false,
-        selected: false,
-        title: "Change Password",
-      }, {
-        path: "/dashboard/Settings",
-        icon: " ti-settings",
-        type: "link",
-        active: false,
-        selected: false,
-        title: "Settings",
-      },
-    ],
-  }
 ];
 
 export const Finance: (MenuItem | NestedMenuItem)[] = [

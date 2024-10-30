@@ -1,21 +1,20 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { Container, Dropdown } from "react-bootstrap";
-import Link from "next/link";
 import { useRouter } from "next/router";
 import dynamic from "next/dynamic";
 import { connect } from "react-redux";
 import { ThemeChanger } from "@/shared/redux/actions";
 import store from "@/shared/redux/store";
 import { Defaultmenu, Closedmenu, iconText, iconOverayFn, DetachedFn, DoubletFn } from "@/shared/data/switcherdata/switcherdata";
-import { AuthenticatedUserModel, AuthenticatedUserModelConvert } from "@/interfaces/AuthenticatedUserModel";
+import { UserModel, AuthenticatedUserModelConvert } from "@/interfaces/AuthenticatedUserModel";
 const HeadDropDown = dynamic(
   () => import('../../data/header/head'),
   { ssr: false }
 )
 
 // FullScreen-end
-function Header({ local_varaiable, ThemeChanger }: { local_varaiable: any, ThemeChanger: any }) {
-  let { basePath } = useRouter()
+function Header({ ThemeChanger }: { local_varaiable: any, ThemeChanger: any }) {
+
 
   //  headerToggleButton
   useEffect(() => {
@@ -216,11 +215,11 @@ function Header({ local_varaiable, ThemeChanger }: { local_varaiable: any, Theme
     }
   }
   // local data
-  const [localData, setLocalData] = useState<AuthenticatedUserModel>({} as AuthenticatedUserModel)
+  const [localData, setLocalData] = useState<UserModel>({} as UserModel)
 
   // loading local data
   React.useEffect(() => {
-    setLocalData(AuthenticatedUserModelConvert.toAuthenticatedUserModel(localStorage.getItem('skooltym_user') as string));
+    setLocalData(AuthenticatedUserModelConvert.toAuthenticatedUserModel(localStorage.getItem('card_user') as string));
   }, [])
   return (
     <Fragment>
@@ -247,19 +246,19 @@ function Header({ local_varaiable, ThemeChanger }: { local_varaiable: any, Theme
               {localData && (
                 <>
                   <div className="p-2 ">
-                    <span className="d-block">{localData.fname} {localData.lname}</span>
-                    <small className="d-block">{localData.role}</small>
+                    <span className="d-block">{localData.name}</span>
+                    <small className="d-block">{localData.type == 1 ? 'Admin' : 'Client'}</small>
                   </div>
                   <Dropdown>
                     <Dropdown.Toggle variant="link" id="dropdown-basic">
-                      <img src={localData.profile_pic} className="rounded" alt={localData.schoolName} width={40} />
+                      <img src={localData.picture} className="rounded" alt={``} width={40} />
                     </Dropdown.Toggle>
 
                     <Dropdown.Menu>
                       {/* <Dropdown.Item href="#/action-1">Profile</Dropdown.Item> */}
-                      {localData.role == 'Admin' && (<Dropdown.Item href="/dashboard/Settings">Settings</Dropdown.Item>)}
+                      {/* {localData.type === 1 && (<Dropdown.Item href="/dashboard/Settings">Settings</Dropdown.Item>)} */}
                       <Dropdown.Item href="javascript:void(0)" onClick={() => {
-                        localStorage.removeItem('skooltym_user')
+                        localStorage.removeItem('card_user')
                         window.location.replace("/");
                         window.location.reload();
                       }}>Logout</Dropdown.Item>

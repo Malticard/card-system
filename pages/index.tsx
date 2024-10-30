@@ -5,11 +5,8 @@ import { useState } from 'react';
 import Link from "next/link";
 import { ChangeEvent } from 'react';
 import Seo from '@/shared/layout-components/seo/seo';
-import { loginUser } from '@/utils/data_fetch';
 import React from 'react';
-import { StaffLogin } from '@/interfaces/StaffLogin';
-
-
+import axios from 'axios';
 const Home = () => {
   const [loading, setLoading] = useState(false);
   const [err, setError] = useState("");
@@ -19,8 +16,27 @@ const Home = () => {
   })
   const { email, password } = data;
   let navigate = useRouter();
+  const loginUser = () => {
+
+    const formData = new FormData();
+    formData.append("email", email);
+    formData.append("password", password);
+    let config = {
+      method: 'post',
+      maxBodyLength: Infinity,
+      url: '/api/auth/login',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      data: formData,
+    };
+
+    return axios.request(config)
+
+
+  }
   React.useEffect(() => {
-    // const user = localStorage.getItem("skooltym_user");
+
   }, [])
   const changeHandler = (e: ChangeEvent<HTMLInputElement>) => {
     setData({ ...data, [e.target.name]: e.target.value })
@@ -30,30 +46,22 @@ const Home = () => {
   const handleLogin = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
-    loginUser(email, password).then((res) => {
-      localStorage.setItem("skooltym_user", JSON.stringify(res.data));
+    loginUser().then((res) => {
       setLoading(false);
-      // handle axios response 
-      if (res.status === 200 || res.status === 201) {
-        const loginData: StaffLogin = res.data;
-        if (loginData.role == 'Admin' || loginData.role == 'Finance') {
-          // console.log(`Current session for first time is ${context.read<FirstTimeUserController>().state}`);
-          if (loginData.isNewUser === true) {
-            navigate.replace('/dashboard/ChangePassword');
-          } else {
-            navigate.replace('/dashboard');
-          }
-        } else {
-          setError("You are not authorized to access this page");
-        }
-
+      const { type } = res.data;
+      localStorage.setItem("card_user", JSON.stringify(res.data));
+      if (type == 1) {
+        console.log("Admin user");
+        navigate.replace('/dashboard');
       } else {
-        setError("Failed to login");
+        console.log("Client user");
+        // navigate.replace('/dashboard');
       }
     }).catch((err) => {
-      setError("Server Offline");
+      console.log(err.response.data.message);
       setLoading(false);
-    });
+      setError(err.response.data.message);
+    })
   }
 
   return (
@@ -79,9 +87,9 @@ const Home = () => {
                     />
                     <div className="clearfix"></div>
 
-                    <h5 className="mt-4 font-satoshi font-bold text-white">Skooltym</h5>
+                    <h5 className="mt-4 font-satoshi font-bold text-white">Cards</h5>
                     <span className="text-white-6 text-md font-normal">
-                      Monitor student drop offs and pickups
+                      {/* Monitor student drop offs and pickups */}
                     </span>
                   </div>
                 </Col>
@@ -100,7 +108,7 @@ const Home = () => {
                             community
                           </p>
                           <Form.Group className="text-start form-group" controlId="formEmail">
-                            <Form.Label>Phone Number</Form.Label>
+                            <Form.Label>Email</Form.Label>
                             <Form.Control
                               className="form-control"
                               placeholder="Enter your registered contact"

@@ -6,21 +6,21 @@ let history: string[] = [];
 import store from "@/shared/redux/store";
 import { ThemeChanger } from "@/shared/redux/actions";
 import { connect } from "react-redux";
-import { AuthenticatedUserModel, AuthenticatedUserModelConvert } from "@/interfaces/AuthenticatedUserModel";
+import { UserModel, AuthenticatedUserModelConvert } from "@/interfaces/AuthenticatedUserModel";
 import { StaffLogin } from "@/interfaces/StaffLogin";
 
 const SideBar = ({ local_varaiable, ThemeChanger }: { local_varaiable: any, ThemeChanger: any }) => {
   let location = useRouter();
   const [menuitems, setMenuitems] = useState(MENUITEMS);
   // local data
-  const [localData, setLocalData] = useState<AuthenticatedUserModel>({} as AuthenticatedUserModel)
+  const [localData, setLocalData] = useState<UserModel>({} as UserModel)
 
   // initial loading
   useEffect(() => {
     // check current role
-    const user: StaffLogin = JSON.parse(localStorage.getItem('skooltym_user') as string)
+    const user: UserModel = JSON.parse(localStorage.getItem('card_user') as string)
     if (user) {
-      if (user.role == 'Admin') {
+      if (user.type == 1) {
         setMenuitems(MENUITEMS);
       } else {
         setMenuitems(Finance);
@@ -50,7 +50,7 @@ const SideBar = ({ local_varaiable, ThemeChanger }: { local_varaiable: any, Them
 
   // loading local data
   React.useEffect(() => {
-    setLocalData(AuthenticatedUserModelConvert.toAuthenticatedUserModel(localStorage.getItem('skooltym_user') as string));
+    setLocalData(AuthenticatedUserModelConvert.toAuthenticatedUserModel(localStorage.getItem('card_user') as string));
 
   }, [])
   useEffect(() => {
@@ -480,7 +480,7 @@ const SideBar = ({ local_varaiable, ThemeChanger }: { local_varaiable: any, Them
           {localData && (
             <Link className="header-logo" href={`/dashboard`}>
               {/* school bag */}
-              <img src={localData.school_badge} alt="skooltym" width={50} height={50} />
+              <img src={localData.picture} alt="skooltym" width={50} height={50} />
               {/* <p>{localData.schoolName}</p> */}
             </Link>
           )}

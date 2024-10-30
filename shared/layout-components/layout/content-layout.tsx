@@ -23,10 +23,10 @@ const Contentlayout = ({ children }: AuthenticationLayoutProps) => {
   let navigate = useRouter();
   useEffect(() => {
     Add();
-    const user = localStorage.getItem('skooltym_user');
+    const user = localStorage.getItem('card_user');
     if (!user) {
       navigate.replace("/");
-      // navigate.reload();s
+
     }
     setlateLoad(true)
   });

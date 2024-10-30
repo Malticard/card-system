@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="container">
         <div className="text-muted">
           <div className="col-md-12">
-            <span>Copyright © {new Date().getFullYear()} <a href="#!" className="text-dark fw-semibold">Skooltym</a> Designed With <span className="bi bi-heart-fill text-danger"></span> by <a target='_blank' href="https://malticard.com"><span className="fw-semibold text-primary text-decoration-underline">Malticard</span></a> All rights reserved</span>
+            <span>Copyright © {new Date().getFullYear()} <a href="#!" className="text-dark fw-semibold">Cards</a> Designed With <span className="bi bi-heart-fill text-danger"></span> by <a target='_blank' href="https://malticard.com"><span className="fw-semibold text-primary text-decoration-underline">Malticard</span></a> All rights reserved</span>
           </div>
         </div>
       </div>

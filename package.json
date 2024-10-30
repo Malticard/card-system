@@ -6,8 +6,12 @@
     "start": "next start"
   },
   "dependencies": {
+    "@emotion/react": "^11.13.3",
+    "@emotion/styled": "^11.13.0",
+    "@mui/material": "^6.1.5",
     "@reduxjs/toolkit": "^2.3.0",
     "axios": "^1.7.7",
+    "bcrypt": "^5.1.1",
     "filepond": "^4.31.4",
     "leaflet": "^1.9.4",
     "mongodb": "^6.5.0",
@@ -16,16 +20,21 @@
     "react": "^18.2.0",
     "react-bootstrap": "^2.10.5",
     "react-chartjs-2": "^5.2.0",
+    "react-data-table-component": "^7.6.2",
+    "react-data-table-component-extensions": "^1.6.0",
     "react-datepicker": "^7.5.0",
     "react-dom": "^18.2.0",
     "react-helmet-async": "^2.0.5",
+    "react-perfect-scrollbar": "^1.5.8",
     "react-quill": "^2.0.0",
     "react-redux": "^9.1.2",
     "react-toastify": "^10.0.6",
     "sass": "^1.80.5",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "swr": "^2.2.5"
   },
   "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
