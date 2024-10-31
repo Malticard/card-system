@@ -87,7 +87,7 @@ const Home = () => {
                     />
                     <div className="clearfix"></div>
 
-                    <h5 className="mt-4 font-satoshi font-bold text-white">Cards</h5>
+                    <h5 className="mt-4 font-satoshi font-bold text-white">Boda Boda Banja System</h5>
                     <span className="text-white-6 text-md font-normal">
                       {/* Monitor student drop offs and pickups */}
                     </span>
