@@ -6,6 +6,8 @@ import DashCard from './components/DashCard';
 import { DashboardItem } from '@/interfaces/DashboardItem';
 import { Skeleton } from '@mui/material';
 import { UserModel } from '@/interfaces/AuthenticatedUserModel';
+import { DashboardController } from '@/lib/controllers/dashboard.controller';
+import axios from 'axios';
 // Chart.register(
 //   CategoryScale,
 // );
@@ -13,31 +15,23 @@ import { UserModel } from '@/interfaces/AuthenticatedUserModel';
 const Dashboardecommerce = () => {
   // loader
   const [loading, setLoading] = React.useState<boolean>(false);
-  // loading class data
-  const [classLoading, setClassLoading] = React.useState<boolean>(false);
-
   // data handler
   const [data, setData] = React.useState<DashboardItem[]>([]);
-  const user: UserModel = JSON.parse(localStorage.getItem('card_user') as string)
+  // 
+  const fetchData = () => {
+    axios.get('/api/dashboard').then((res) => {
+      console.log(res);
+      setData(res.data);
+      setLoading(false);
+    }).catch((err) => {
+      console.log(err);
+      setLoading(false);
+    });
+  }
   React.useEffect(() => {
     // fetch dashcards data
     setLoading(true);
-    // fetchDashboardMetaData().then((data) => {
-    //   setData(data);
-    //   setLoading(false);
-    // }).catch((err) => {
-    //   console.log(err);
-    //   setLoading(false);
-    // });
-    // fetch classes data
-    setClassLoading(true);
-    // fetchDashBoardData().then((res) => {
-    //   setClassLoading(false);
-    //   setClassData(res);
-    // }).catch((err) => {
-    //   setClassLoading(false);
-    //   console.log(err);
-    // });
+    fetchData();
   }, []);
   return (
     <div>
@@ -49,12 +43,12 @@ const Dashboardecommerce = () => {
                 key={index}
                 className='mx-4'
                 variant="rounded"
-                width={300}
+                width={250}
                 height={200}
               />
             </Col>
 
-          )) : data.map((item, index) => (<DashCard key={index} label={item.label} value={item.value} url={item.page} />))
+          )) : data.map((item, index) => (<DashCard key={index} label={item.label} icon={item.icon} value={item.value} url={item.page} />))
         }
 
       </Row>

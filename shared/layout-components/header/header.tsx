@@ -278,7 +278,7 @@ function Header({ ThemeChanger }: { local_varaiable: any, ThemeChanger: any }) {
 
 Header.propTypes = {};
 
-Header.defaultProps = {};
+// Header.defaultProps = {};
 const mapStateToProps = (state: any) => ({
   local_varaiable: state
 })

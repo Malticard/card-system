@@ -18,12 +18,11 @@ function MyApp({ Component, pageProps }: { Component: any, pageProps: any }) {
   const Layout: any = layouts[Component.layout] || ((pageProps: any) => <Component>{pageProps}</Component>);
   const router = useRouter();
   React.useEffect(() => {
-    let userSession = window.localStorage.getItem("cards_user");
-
+    let userSession = window.localStorage.getItem("card_user");
     if (userSession === null) {
-      router.replace('/', {
-        scroll: false,
-      });
+      // router.replace('/', {
+      //   scroll: false,
+      // });
 
     } else {
       // console.log(userSession);

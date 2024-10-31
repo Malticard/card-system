@@ -1,9 +1,10 @@
 
+import { IconFrame, IconUser } from '@/public/assets/icon-fonts/tabler-icons/icons-react';
 import Link from 'next/link';
 import React from 'react';
 import { Col, Card } from 'react-bootstrap';
 
-const DashCard = (props: { label: string; value: number; url: string; }) => {
+const DashCard = (props: { label: string; value: number; url: string; icon?: string }) => {
     return (
         <Col sm={12} md={6} lg={6} xl={3}>
             <Link href={props.url}>
@@ -14,7 +15,11 @@ const DashCard = (props: { label: string; value: number; url: string; }) => {
                                 {props.label}
                             </label>
                             <h2 className="text-end">
-                                <i className="mdi mdi-cart icon-size float-start text-primary"></i>
+                                {
+                                    props.icon == 'user' ? <IconUser className='con-size float-start text-primary' /> : <IconFrame className="icon-size float-start text-primary" />
+                                }
+
+                                {/* <i className="mdi mdi-cart icon-size float-start text-primary"></i> */}
                                 <span className="fw-bold">{props.value}</span>
                             </h2>
                             <div className="mb-0 mt-2 text-muted">
