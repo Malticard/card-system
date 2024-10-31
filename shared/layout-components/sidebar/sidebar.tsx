@@ -7,7 +7,7 @@ import store from "@/shared/redux/store";
 import { ThemeChanger } from "@/shared/redux/actions";
 import { connect } from "react-redux";
 import { UserModel, AuthenticatedUserModelConvert } from "@/interfaces/AuthenticatedUserModel";
-import { StaffLogin } from "@/interfaces/StaffLogin";
+// import { StaffLogin } from "@/interfaces/StaffLogin";
 
 const SideBar = ({ local_varaiable, ThemeChanger }: { local_varaiable: any, ThemeChanger: any }) => {
   let location = useRouter();

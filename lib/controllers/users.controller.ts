@@ -15,7 +15,7 @@ export default class UserController {
     static async storeUser(req: NextApiRequest, res: NextApiResponse) {
         try {
             // first check is user already exists
-            const { name, email, password, type } = req.body;
+            const { name, phone, email, password, type } = req.body;
             const user = await UserModel.findOne({ email: email });
             if (user) {
                 return res.status(401).json({ message: "User already exists" });
@@ -26,6 +26,7 @@ export default class UserController {
                     name: name,
                     email: email,
                     password: hashedPassword,
+                    phone: phone,
                     type: type
                 });
                 return res.status(200).json({ message: name + " created successfully." })
@@ -46,17 +47,23 @@ export default class UserController {
     }
     // update user
     static async updateUser(req: NextApiRequest, res: NextApiResponse) {
-        const { name, email, password, type } = req.body;
+        const { name, email, phone, password, type } = req.body;
         try {
+            // check if user exists
+            const user = await UserModel.findOne({ email: email });
+            if (!user) {
+                return res.status(404).json({ message: "User not found" });
+            }
             const hashedPassword = bcrypt.hashSync(password, 15);
             const response = await UserModel.findByIdAndUpdate(
                 req.query.id,
                 {
                     $set: {
-                        name: name,
-                        email: email,
-                        password: hashedPassword,
-                        type: type
+                        name: name == "" ? user.name : name,
+                        email: email == "" ? user.email : email,
+                        password: password == "" ? user.password : hashedPassword,
+                        type: type == "" ? user.type : type,
+                        phone: phone == "" ? user.phone : phone
                     }
                 },
                 { new: true } // Return the updated document

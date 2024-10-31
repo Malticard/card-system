@@ -20,6 +20,11 @@ const userSchema = new Schema({
         default: "http://via.placeholder.com/300x300",
         required: false,
     },
+    phone: {
+        type: Number,
+        default: 0,
+        required: false,
+    },
     type: {
         type: Number,
         default: 0,

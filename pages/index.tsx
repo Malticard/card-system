@@ -51,7 +51,7 @@ const Home = () => {
       const { type } = res.data;
       localStorage.setItem("card_user", JSON.stringify(res.data));
       if (type == 1) {
-        console.log("Admin user");
+        // console.log("Admin user");
         navigate.replace('/dashboard');
       } else {
         console.log("Client user");
@@ -101,7 +101,7 @@ const Home = () => {
                         {err && <Alert variant="danger">{err}</Alert>}
                         <Form onSubmit={handleLogin}>
                           <h5 className="text-start font-bold text-xl mb-2">
-                            SignIn to Your Account
+                            Sign In to Your Account
                           </h5>
                           <p className="mb-4 text-muted fs-13 ms-0 text-start">
                             Sign In to create, discover and connect with the global
